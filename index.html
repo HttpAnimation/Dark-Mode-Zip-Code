@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .form-input {
+            margin-bottom: 10px;
+        }
+
+        .form-input input {
+            padding: 5px;
+            border-radius: 4px;
+            border: none;
+            width: 200px;
+        }
+
+        .form-input button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+    <title>Dark Mode Zip Code</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Enter Your Zip Code</h2>
+        <form id="zipForm">
+            <div class="form-input">
+                <input type="text" id="zipCode" placeholder="Zip Code" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const zipForm = document.getElementById('zipForm');
+        const zipCodeInput = document.getElementById('zipCode');
+        const resultDiv = document.getElementById('result');
+
+        zipForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const zipCode = zipCodeInput.value;
+            resultDiv.textContent = `Your Zip Code: ${zipCode}`;
+            zipCodeInput.value = '';
+        });
+    </script>
+</body>
+
+</html>
